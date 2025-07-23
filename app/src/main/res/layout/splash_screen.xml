@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewSplashScr"
+        android:layout_width="281dp"
+        android:layout_height="292dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textViewSplashBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Food Odering"
+        android:textAlignment="center"
+        android:textColor="#BE1515"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewSplashScr"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/imageViewSplashScr"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewSplashScr" />
+
+    <TextView
+        android:id="@+id/textViewSplashSlogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Trust my food"
+        android:textAlignment="center"
+        android:textColor="#BD1515"
+        app:layout_constraintEnd_toEndOf="@+id/textViewSplashBrand"
+        app:layout_constraintStart_toStartOf="@+id/textViewSplashBrand"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSplashBrand" />
+
+    <TextView
+        android:id="@+id/textViewAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Design By Group 13"
+        android:textAlignment="center"
+        android:textColor="#F27575"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

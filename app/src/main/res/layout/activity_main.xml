@@ -7,24 +7,54 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/hello"
-        android:textSize="30sp"
+        android:id="@+id/bottomNavigationViewHome"
+        app:menu="@menu/menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NEXT"
-        app:layout_constraintEnd_toEndOf="parent"
+         />
+    <TextView
+        android:id="@+id/textViewExploreHome"
+        android:layout_width="258dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="46dp"
+        android:text="Explore Your Favorite Food"
+        android:textAlignment="center"
+        android:textColor="@color/textcolor"
+        android:textSize="26dp"
+        android:layout_marginLeft="21dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/hello" />
+        app:layout_constraintTop_toTopOf="parent" 
+        android:fontFamily="sans-serif-medium"
+        />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/bell_01"
+        app:layout_constraintStart_toEndOf="@id/textViewExploreHome"
+        app:layout_constraintTop_toTopOf="@id/textViewExploreHome"
+        app:layout_constraintBottom_toBottomOf="@id/textViewExploreHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        ></ImageView>
+    <EditText
+        android:id="@+id/editTextSearchHome"
+        android:layout_width="318dp"
+        android:layout_height="60dp"
+        android:hint="What do you want to order?"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/textViewExploreHome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/edittextshape"
+        android:layout_marginTop="40dp"
+        android:drawableLeft="@drawable/icon_search"
+        android:paddingLeft="16dp"
+        android:drawablePadding="10dp"
+        android:elevation="13dp"
+        android:ems="20"
 
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
