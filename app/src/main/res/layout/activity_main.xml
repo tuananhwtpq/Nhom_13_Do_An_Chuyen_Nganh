@@ -21,15 +21,16 @@
         android:layout_width="258dp"
         android:layout_height="31dp"
         android:layout_marginTop="46dp"
-        android:text="Explore Your Favorite Food"
-        android:textAlignment="center"
+        android:text="@string/explore_your_favorite_food"
+        android:textAlignment="textStart"
         android:textColor="@color/textcolor"
         android:textSize="26dp"
         android:layout_marginLeft="21dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" 
+        app:layout_constraintTop_toTopOf="parent"
         android:fontFamily="sans-serif-medium"
         />
+
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -37,14 +38,12 @@
         app:layout_constraintStart_toEndOf="@id/textViewExploreHome"
         app:layout_constraintTop_toTopOf="@id/textViewExploreHome"
         app:layout_constraintBottom_toBottomOf="@id/textViewExploreHome"
-        app:layout_constraintEnd_toEndOf="parent"
-        ></ImageView>
+        app:layout_constraintEnd_toEndOf="parent" />
     <EditText
         android:id="@+id/editTextSearchHome"
         android:layout_width="318dp"
         android:layout_height="60dp"
         android:hint="What do you want to order?"
-        android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/textViewExploreHome"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,4 +56,22 @@
         android:ems="20"
 
         />
+
+    <fragment
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation"
+        app:layout_constraintTop_toBottomOf="@id/editTextSearchHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationViewHome"
+         />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
