@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="323dp"
+        android:layout_height="87dp"
+        android:id="@+id/cardViewPopular"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutPopular"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="@id/cardViewPopular"
+            app:layout_constraintEnd_toEndOf="@id/cardViewPopular"
+            app:layout_constraintStart_toStartOf="@id/cardViewPopular"
+            app:layout_constraintTop_toTopOf="@id/cardViewPopular">
+
+            <ImageView
+                android:id="@+id/imageViewPopular"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/burger"
+                app:layout_constraintBottom_toBottomOf="@id/constraintLayoutPopular"
+                app:layout_constraintStart_toStartOf="@id/constraintLayoutPopular"
+                app:layout_constraintTop_toTopOf="@id/constraintLayoutPopular"
+
+                />
+
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="94dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="25dp"
+                android:text="Popular Food"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/imageViewPopular"
+                app:layout_constraintStart_toEndOf="@id/imageViewPopular"
+                app:layout_constraintTop_toTopOf="@id/imageViewPopular"
+
+                />
+
+            <TextView
+                android:id="@+id/textViewCost"
+                android:layout_width="27dp"
+                android:layout_height="29dp"
+                android:text="$7"
+                android:textSize="22dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/constraintLayoutPopular"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@id/textViewName"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewAddCart"
+                android:layout_width="90dp"
+                android:layout_height="19dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/addtocartshape"
+                android:text="Add To Cart"
+                android:textAlignment="center"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textViewCost"
+                app:layout_constraintHorizontal_bias="0.43"
+                app:layout_constraintStart_toStartOf="@+id/textViewCost"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCost" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+        
+</androidx.constraintlayout.widget.ConstraintLayout>

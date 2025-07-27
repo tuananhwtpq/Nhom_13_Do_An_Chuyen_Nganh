@@ -10,8 +10,12 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewImg"
         android:layout_width="match_parent"
+        app:cardCornerRadius="15dp"
         android:layout_height="200dp"
-        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,9 +26,60 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:iss_auto_cycle="true"
+            app:iss_no_dots="true"
             app:iss_period="1000"
             app:iss_delay="1000"
             app:iss_text_align="CENTER"/>
     </androidx.cardview.widget.CardView>
 
+    <TextView
+        android:id="@+id/textViewPopular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Popular"
+        android:textAlignment="textStart"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewImg" />
+
+
+    <TextView
+        android:id="@+id/textViewMenu"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/textviewshape"
+        android:fontFamily="sans-serif-medium"
+        android:text="View Menu"
+        android:textAlignment="center"
+        android:textColor="@color/textcolor"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewPopular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintStart_toEndOf="@+id/textViewPopular"
+        app:layout_constraintTop_toBottomOf="@id/cardViewImg"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/popularRecyclerViewHome"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="10dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPopular"
+        app:layout_constraintVertical_bias="0.0">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>
