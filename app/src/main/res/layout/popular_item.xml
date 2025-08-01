@@ -26,6 +26,7 @@
             android:id="@+id/constraintLayoutPopular"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             app:layout_constraintBottom_toBottomOf="@id/cardViewPopular"
             app:layout_constraintEnd_toEndOf="@id/cardViewPopular"
             app:layout_constraintStart_toStartOf="@id/cardViewPopular"

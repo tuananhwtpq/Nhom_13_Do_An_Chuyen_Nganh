@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.CartFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/textViewCart"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:text="Cart"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="24dp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Cart" />
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCart"
+        android:layout_marginTop="12dp"
+        android:elevation="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnProceed"
+        android:layout_marginBottom="50dp">
+        
+    </androidx.recyclerview.widget.RecyclerView>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnProceed"
+        android:layout_width="325dp"
+        android:layout_height="57dp"
+        android:text="Proceed"
+        android:fontFamily="sans-serif-medium"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        android:background="@drawable/whitebtn"
+        android:textColor="@color/textcolor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="12dp"
+        android:layout_marginBottom="20dp"/>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
