@@ -7,7 +7,7 @@
     tools:context=".Fragment.SearchFragment">
 
         <EditText
-            android:id="@+id/editTextSearchHome"
+            android:id="@+id/editTextSearch"
             android:layout_width="318dp"
             android:layout_height="60dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -26,21 +26,21 @@
         <TextView
             android:layout_width="67dp"
             android:layout_height="30dp"
-            android:id="@+id/textViewMenu"
+            android:id="@+id/textViewSearch"
             android:text="Menu"
-            app:layout_constraintTop_toBottomOf="@id/editTextSearchHome"
-            app:layout_constraintStart_toStartOf="@id/editTextSearchHome"
-            app:layout_constraintEnd_toEndOf="@id/editTextSearchHome"
+            app:layout_constraintTop_toBottomOf="@id/editTextSearch"
+            app:layout_constraintStart_toStartOf="@id/editTextSearch"
+            app:layout_constraintEnd_toEndOf="@id/editTextSearch"
             android:layout_marginTop="20dp"
             android:textSize="24dp"
             android:fontFamily="sans-serif-medium"
 
             />
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/cartRecyclerView"
+            android:id="@+id/searchRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMenu"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSearch"
             android:layout_marginTop="12dp"
             android:elevation="10dp"
             app:layout_constraintStart_toStartOf="parent"

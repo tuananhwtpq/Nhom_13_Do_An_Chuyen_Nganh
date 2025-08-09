@@ -1,60 +1,99 @@
 package com.example.foodordering.Fragment
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodordering.R
+import com.example.foodordering.adapter.MenuAdapter
+import com.example.foodordering.databinding.FragmentSearchBinding
+import org.w3c.dom.Text
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SearchFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SearchFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentSearchBinding
+    private lateinit var adapter: MenuAdapter
+    private val originalMenuNamelist = listOf("Burger","Pizza","Hotdog","Pizza","Hotdog", "Burger", "Pizza", "Burger", "Pizza","Burger", "Pizza","Burger", "Pizza")
+    private val originalMenuCostList = listOf("$5","$6","$7","$8","$9", "$35", "$36", "$37", "$38","$39", "$40","$44", "$53")
+    private val originalMenuImageList = listOf(
+        R.drawable.burger,
+        R.drawable.pizza,
+        R.drawable.hotdog,
+        R.drawable.pizza,
+        R.drawable.hotdog,
+        R.drawable.burger,
+        R.drawable.pizza,
+        R.drawable.burger,
+        R.drawable.pizza,
+        R.drawable.burger,
+        R.drawable.pizza,
+        R.drawable.burger,
+        R.drawable.pizza)
+    private val filterMenuNamelist = mutableListOf<String>()
+    private val filterMenuCostList = mutableListOf<String>()
+    private val filterMenuImageList = mutableListOf<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false)
+        binding = FragmentSearchBinding.inflate(inflater, container, false)
+        adapter = MenuAdapter(filterMenuNamelist, filterMenuImageList, filterMenuCostList)
+        binding.searchRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.searchRecyclerView.adapter = adapter
+
+        setupSearchView()
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SearchFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SearchFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun setupSearchView() {
+        binding.editTextSearch.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
             }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                filterMenuItems(s.toString())
+            }
+        })
+        }
+
+    private fun filterMenuItems(query: String) {
+        filterMenuNamelist.clear()
+        filterMenuCostList.clear()
+        filterMenuImageList.clear()
+        if(query.isEmpty()) {
+            filterMenuNamelist.addAll(originalMenuNamelist)
+            filterMenuCostList.addAll(originalMenuCostList)
+            filterMenuImageList.addAll(originalMenuImageList)
+            adapter.updateData(filterMenuNamelist, filterMenuImageList, filterMenuCostList)
+            binding.searchRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+            binding.searchRecyclerView.adapter = adapter
+        }
+        else {
+            filterMenuNamelist.addAll(originalMenuNamelist.filter { it.contains(query, ignoreCase = true) })
+            filterMenuCostList.addAll(originalMenuCostList.filterIndexed { index, _ -> originalMenuNamelist[index].contains(query, ignoreCase = true) })
+            filterMenuImageList.addAll(originalMenuImageList.filterIndexed { index, _ -> originalMenuNamelist[index].contains(query, ignoreCase = true) })
+            adapter.updateData(filterMenuNamelist, filterMenuImageList, filterMenuCostList)
+            binding.searchRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+            binding.searchRecyclerView.adapter = adapter
+
+        }
+
     }
+
 }
