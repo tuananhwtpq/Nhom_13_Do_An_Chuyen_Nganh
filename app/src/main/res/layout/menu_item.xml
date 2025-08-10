@@ -22,7 +22,6 @@
             android:id="@+id/constraintLayoutMenu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             app:layout_constraintBottom_toBottomOf="@id/cardViewMenu"
             app:layout_constraintEnd_toEndOf="@id/cardViewMenu"
             app:layout_constraintStart_toStartOf="@id/cardViewMenu"

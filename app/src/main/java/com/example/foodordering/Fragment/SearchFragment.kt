@@ -70,20 +70,20 @@ class SearchFragment : Fragment() {
         imm?.hideSoftInputFromWindow(view.windowToken, 0)
     }
     private fun setupSearchView() {
-//        binding.editTextSearch.addTextChangedListener(object : TextWatcher {
-//            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-//
-//            }
-//
-//            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-//
-//            }
-//
-//            override fun afterTextChanged(s: Editable?) {
-//                filterMenuItems(s.toString())
-//
-//            }
-//        })
+        binding.editTextSearch.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                filterMenuItems(s.toString())
+
+            }
+        })
         binding.editTextSearch.setOnEditorActionListener(TextView.OnEditorActionListener { v, actionId, event ->
             // Kiểm tra xem sự kiện có phải là nhấn phím Enter/Search không
             // actionId có thể là EditorInfo.IME_ACTION_SEARCH, IME_ACTION_DONE, IME_ACTION_GO, IME_ACTION_NEXT, IME_ACTION_SEND
